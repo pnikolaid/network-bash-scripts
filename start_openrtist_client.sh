@@ -6,7 +6,7 @@ export QT_QPA_PLATFORM=offscreen
 
 # Defaults 
 DEFAULT_PORT=9099
-DEFAULT_DURATION = 100
+DEFAULT_DURATION=100
 
 # Check if a port number is provided as an argument
 if [ -z "$1" ]; then
