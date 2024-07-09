@@ -13,7 +13,7 @@ ping -c 1 192.168.70.129 > /dev/null 2>&1
 
 # Check the exit status of the ping command
 if [ $? -eq 0 ]; then
-    echo "Ping to 192.168.70.192 was successful."
+    echo "Ping to 192.168.70.129 was successful."
 else
     echo "Ping to 192.168.70.129 failed."
 fi
