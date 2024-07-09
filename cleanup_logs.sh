@@ -4,10 +4,12 @@
 DIR="/tmp"
 
 # File patterns to clean
-PATTERNS=("recv" "sent" "iperf3")
+PATTERNS=("sent*" "recv*" "iperf3*")
 
-# Iterate over each pattern and clean matching files
+# Iterate over each pattern and truncate matching files
 for pattern in "${PATTERNS[@]}"; do
-    # Find files matching the pattern and truncate them
-    find "$DIR" -type f -name "${pattern}*" -exec sh -c '> {}' \;
+    # Use truncate command to clear file contents
+    find "$DIR" -type f -name "${pattern}" -exec truncate -s 0 {} +
 done
+
+echo "Cleanup complete: Cleared contents of files starting with sent, recv, or iperf3 in /tmp."
