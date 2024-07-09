@@ -19,7 +19,7 @@ fi
 SESSION_NAME="openrtist_server_$PORT"
 
 # Command to run inside the screen session
-COMMAND="python main.py --timing -p $PORT"
+COMMAND="sudo ./venv/bin/python main.py --timing -p $PORT"
 
 # Start a new screen session, run the command, and detach
 screen -dmS $SESSION_NAME bash -c "$COMMAND"
