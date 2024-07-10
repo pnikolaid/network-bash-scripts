@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd ../oai-cn5g
+docker compose pull
 docker compose up -d
 cd ../custom-openairinterface5g/cmake_targets/ran_build/build
 
