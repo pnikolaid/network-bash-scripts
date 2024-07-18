@@ -11,11 +11,4 @@ else
   PORT=$1
 fi
 
-# Name for the screen session
-SCREEN_NAME="iperf3_server_ul_$PORT"
-
-# Start iperf3 server within a new detached screen session
-screen -dmS "$SCREEN_NAME" bash -c "iperf3 -s -p $PORT -f m --logfile /tmp/iperf3_ul_$PORT.txt "
-
-# Print a message indicating the server has started
-echo "iperf3 server started on port $PORT in screen session $SCREEN_NAME"
+iperf3 -s -p $PORT -f m --logfile /tmp/iperf3_ul_$PORT.txt

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p ~/panos/command_outputs
 cd ../oai-cn5g
 docker compose pull
 docker compose up -d

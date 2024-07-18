@@ -4,6 +4,7 @@ cd ../openrtist/python-client
 source venv/bin/activate
 export QT_QPA_PLATFORM=offscreen
 
+
 # Defaults 
 DEFAULT_PORT=9099
 DEFAULT_DURATION=100
@@ -24,13 +25,5 @@ else
   DURATION=$2
 fi
 
-
-# Name of the screen session
-SESSION_NAME="openrtist_client_$PORT"
-
-# Command to run inside the screen session
-COMMAND="./src/openrtist/sinfonia_wrapper.py -v ./Big_Buck_Bunny_1080_10s_5MB.mp4 -c 192.168.70.129:$PORT --quiet True -u $DURATION"
-
-# Start a new screen session, run the command, and detach
-screen -dmS $SESSION_NAME bash -c "$COMMAND"
+./src/openrtist/sinfonia_wrapper.py -v ./Big_Buck_Bunny_1080_10s_5MB.mp4 -c 192.168.70.129:$PORT --quiet True -u $DURATION >> ~/panos/command_outputs/openrtist_client_$PORT.txt 2>&1
 
