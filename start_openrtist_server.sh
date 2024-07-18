@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p  ~/panos/command_outputs
 cd ../openrtist/server
 source venv/bin/activate
 

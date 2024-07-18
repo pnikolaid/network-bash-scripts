@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p ~/panos/command_outputs
 # Default port
 DEFAULT_PORT=5201
 
