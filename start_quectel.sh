@@ -1,6 +1,5 @@
 #!/bin/bash
 
-mkdir -p  ~/panos/command_outputs
 cd ../quectel
 source venv/bin/activate
 ./venv/bin/python on.py 

@@ -28,4 +28,13 @@ else
   RATE=$3
 fi
 
-iperf3 -c 192.168.70.129 -p $PORT -u -b $RATE -R -t $DURATION -T $PORT -f m --logfile /tmp/iperf3_dl.txt
+# Name of the screen session
+SESSION_NAME="iperf3_client_dl_$PORT"
+
+# Command to run inside the screen session
+COMMAND="iperf3 -c 192.168.70.129 -p $PORT -u -b $RATE -R -t $DURATION -T $PORT -f m --logfile /tmp/iperf3_dl.txt"
+
+# Start a new screen session, run the command, and detach
+screen -dmS $SESSION_NAME bash -c "$COMMAND"
+
+echo "Issued $COMMAND in screen $SESSION_NAME"

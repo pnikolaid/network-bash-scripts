@@ -15,5 +15,13 @@ else
   PORT=$1
 fi
 
-./venv/bin/python main.py --timing -p $PORT >  ~/panos/command_outputs/openrtist_server_$PORT.txt 2>&1
+
+# Name of the screen session
+SESSION_NAME="openrtist_server_$PORT"
+
+# Command to run inside the screen session
+COMMAND="sudo ./venv/bin/python main.py --timing -p $PORT"
+
+# Start a new screen session, run the command, and detach
+screen -dmS $SESSION_NAME bash -c "$COMMAND"
 
