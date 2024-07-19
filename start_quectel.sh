@@ -3,7 +3,6 @@
 cd ../quectel
 source venv/bin/activate
 ./venv/bin/python on.py 
-ip route add 192.168.70.128/26 via 192.168.225.1
 ip route add 192.168.70.129/32 via 192.168.225.1
 
 sleep 10
